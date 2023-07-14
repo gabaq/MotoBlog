@@ -1,0 +1,20 @@
+{% extends "pages.html" %}
+{% load static %}
+{% block content %}
+
+    <h1>{{ post.titulo }}</h1>
+    </br>
+    <p><strong>Subtítulo:</strong> {{ post.subtitulo }}</p>
+    </br>
+    <img src="{{ post.imagen.url }}" alt="Imagen del post">
+    </br>
+    <p><strong>Contenido:</strong> {{ post.cuerpo }}</p>
+    </br>
+    <p><strong>Autor:</strong> {{ post.autor }}</p>
+    <p><strong>Fecha:</strong> {{ post.fecha }}</p>
+    </br>
+    <a href="{% url 'post_update' post.pk %}">Editar</a>
+    <a href="{% url 'post_delete' post.pk %}">Eliminar</a>
+    <a href="{% url 'post_list' %}">Volver a la lista</a>
+
+{% endblock %}

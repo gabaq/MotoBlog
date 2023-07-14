@@ -1,0 +1,19 @@
+{% extends "pages.html" %}
+{% load static %}
+
+
+{% block content %}
+
+ <a href="{% url 'post_create' %}">Crear nuevo post</a>
+ <h1>Lista de Posts</h1>
+  
+
+  <ul>
+    {% for post in posts %}
+      <li><a href="{% url 'post_detail' post.pk %}">{{ post.titulo }}</a></li>
+    {% empty %}
+      <li>No hay posts</li>
+    {% endfor %}
+  </ul>
+
+{% endblock %}
