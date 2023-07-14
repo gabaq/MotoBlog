@@ -3,6 +3,6 @@ from Blog.views import *
 
 urlpatterns = [
     path('', inicio, name = 'inicio'),    
-    #path('Users/', include('Users.urls')),
+    path('Users/', include('Users.urls')),
 
 ]    
