@@ -12,6 +12,7 @@
       </div> 
   </div>
 </header>
+
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
   <p></p>
   {% if user.is_authenticated %}
@@ -29,9 +30,13 @@
             <img class="card-img-top" src="{{ post.imagen.url }}" alt="Imagen del post">
           </a>
           <div class="card-body">
-            <div class="small text-muted">{{ post.fecha }}</div>
+            <!--<div class="small text-muted">{{ post.fecha }}</div>-->
+            <div class="d-sm-flex align-items-center justify-content-between">
+              <div class="small text-muted"></div>
+              <div class="small text-muted">Creado el {{ post.fecha }} por {{ post.autor }}</div>
+            </div> 
             <h2 class="card-title">{{ post.titulo }}</h2>
-            <p class="card-text">{{ post.cuerpo }}</p>
+            <p class="card-text main-card-text">{{ post.cuerpo }}</p>
             <a class="btn btn-primary" href="{% url 'post_detail' post.pk %}">Leer más →</a>
           </div>
         </div>

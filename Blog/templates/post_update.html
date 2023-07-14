@@ -1,10 +1,6 @@
 {% extends "pages.html" %}
 {% load static %}
 
-{% block title %}
-  Crear Post
-{% endblock %}
-
 {% block content %}
     <h2>Editar Post</h2>
     <form method="post" enctype="multipart/form-data">
@@ -29,10 +25,18 @@
             <label for="id_fecha">Fecha:</label>
             {{ form.fecha }}
         </div>
+        {% if form.imagen.errors %}
+        <div class="form-group">
+            <label for="id_imagen">Imagen:</label>
+            {{ form.imagen }}
+            <small class="text-danger">{{ form.imagen.errors }}</small>
+        </div>
+        {% else %}
         <div class="form-group">
             <label for="id_imagen">Imagen:</label>
             {{ form.imagen }}
         </div>
+        {% endif %}
         <button type="submit">Guardar cambios</button>
     </form>
 {% endblock %}
