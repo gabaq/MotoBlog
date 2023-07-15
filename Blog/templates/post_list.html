@@ -36,7 +36,7 @@
               <div class="small text-muted">Creado el {{ post.fecha }} por {{ post.autor }}</div>
             </div> 
             <h2 class="card-title">{{ post.titulo }}</h2>
-            <p class="card-text main-card-text">{{ post.cuerpo }}</p>
+            <p class="card-text main-card-text">{{ post.subtitulo }}</p>
             <a class="btn btn-primary" href="{% url 'post_detail' post.pk %}">Leer más →</a>
           </div>
         </div>

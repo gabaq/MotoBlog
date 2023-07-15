@@ -8,7 +8,9 @@ from django.contrib.auth import login, logout, authenticate , update_session_aut
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib import messages
-
+from django.conf import settings
+import os
+import shutil
 # Create your views here.
 
 def myLogin(request):
@@ -43,20 +45,48 @@ def myLogout(request):
 @login_required
 def myProfile(request):
     user = request.user
+    try:
+        profile = Profile.objects.get(user=user)
+    except Profile.DoesNotExist:
+        # Crea un nuevo perfil para el usuario
+        profile = Profile(user=user)
+        profile.save()
+
     if request.method == "POST":
         form = UserUpdateForm(request.POST, request.FILES, instance=user)
         if form.is_valid():
-            form.avatar = form.cleaned_data['avatar']
             form.save()
+            # Actualiza los campos del perfil si no están vacíos
+            if form.cleaned_data['description']:
+                profile.description = form.cleaned_data['description']
+            if form.cleaned_data['website']:
+                profile.website = form.cleaned_data['website']
+            if form.cleaned_data['avatar']:
+                profile.avatar = form.cleaned_data['avatar']
+            if form.cleaned_data['dateOfBirth']:
+                profile.dateOfBirth = form.cleaned_data['dateOfBirth']
+            if form.cleaned_data['country']:
+                profile.country = form.cleaned_data['country']
+            profile.save()
             messages.success(request, 'Tu perfil ha sido actualizado exitosamente.')
             return redirect('myProfile')
         else:
             messages.error(request, 'Hubo un error al actualizar tu perfil. Por favor, verifica los datos ingresados.')
     else:
-        form = UserUpdateForm(instance=user)
-    context = {'form': form}
+        form = UserUpdateForm(instance=user, initial={
+            'description': profile.description,
+            'website': profile.website,
+            'avatar': profile.avatar,
+            'dateOfBirth': profile.dateOfBirth,
+            'country': profile.country
+        })
+
+    context = {'form': form, 'profile': profile}
     return render(request, 'profile.html', context)
 
+
+
+@login_required
 def changePassword(request):
     if request.method == 'POST':
         form = PasswordChangeForm(request.user, request.POST)
@@ -83,11 +113,15 @@ def changePassword(request):
 def deleteUser(request):
     if request.method == 'POST':
         user = request.user
+        if user.profile.avatar:
+            # Obtiene la ruta de la carpeta del usuario
+            folder_path = os.path.dirname(user.profile.avatar.path)
+            # Elimina la carpeta del usuario y todos sus contenidos
+            shutil.rmtree(folder_path)
         user.delete()
         messages.success(request, 'Tu cuenta ha sido eliminada exitosamente.')
         logout(request)
         return redirect('inicio')
-
     return render(request, 'deleteUser.html')
 
 

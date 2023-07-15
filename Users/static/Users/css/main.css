@@ -1,76 +1,228 @@
+body {
+  background-color: #222;
+}
+.loginBody, .registerBody {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #222;
+}
 .containerForm {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f2f2f2;
-    border-radius: 5px;
-  }
+  max-width: 500px;
+  padding: 30px;
+  background-color: #333;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  color: #fff;
+  width: -webkit-fill-available;  
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+}
+
+.containerFormProfile {
+  background-color: #333;
+  border-radius: 5px;
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); */
+  color: black;
+  width: -webkit-fill-available;  
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  padding-left: 1%;
+}
+.containerFormAvatar{
+  background-color: #333;
+  border-radius: 5px;
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); */
+  color: #fff;
+  width: -webkit-fill-available;  
+  display: flex;
+  flex-direction: column;
   
+}
+
+.formSectionTitleContainer{
+  margin-bottom: 5%;
+}
+.center-text {
+  text-align: center;
+}
+.messages {
+  list-style-type: none;
+}
 .formTitle {
-    text-align: center;
-    color: #333;
-    font-weight: bold;
-  }
-  
+  text-align: center;
+  color: #fff;
+  font-weight: bold;
+  margin-top: 1%;  
+}
+
 .formGroup {
-    margin-bottom: 15px;
-  }
-  
+  margin-bottom: 20px;
+}
+
 .formLabel {
-    display: block;
-    margin-bottom: 5px;
-    color: #333;
-    font-weight: bold;
-  }
-  
+  display: inline;
+  margin-bottom: 5px;
+  color: #fff;
+  font-weight: lighter;
+}
+
 .formInput {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 3px;
-    border: 1px solid #ccc;
-  }
-  
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  background-color: #444;
+  color: #fff;
+}
+
+.customInput {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  background-color: #444;
+  color: #fff;
+}
+.formButtonProfile {
+  /* display: block;
+  width: 100%; */
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
 .formButton {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    background-color: #333;
-    color: #fff;
-    font-size: 16px;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-  }
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.formButton:hover {
+  background-color: #0056b3;
+}
 
 .avatarContainer {
-    display: flex;
-    align-items: center;
-  }
-  
+  display: flex;
+  align-items: center;
+  margin-bottom: 1%;
+  margin-left: 1%;
+  margin-top: 1%;
+  justify-content: center;
+}
+
+input[type="file"].custom-file-input {
+  color: transparent;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+input[type="file"]::-webkit-file-upload-button {
+  visibility: hidden;
+}
+
+input[type="file"]::before {
+  content: 'Seleccionar archivo';
+  display: grid;
+  background-color: #007bff;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  justify-content: center;
+  margin-top: 10%;
+  margin-bottom: -10%;
+}
+
+input[type="file"]:hover::before {
+  background-color: #0056b3;
+}
+
+.custom-file-input::before {
+  content: 'Cambiar imagen';
+  display: inline-block;
+  background-color: #007bff;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.custom-file-input:hover::before {
+  background-color: #0056b3;
+}
+
+
+.avatarInputContainer {
+  margin-left: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.avatarPreview {
+  width: 100px;
+  height: 100px;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+
+
 .avatarImage {
-    width: 50px; /* Ajusta el tamaño según tus necesidades */
-    height: 50px; /* Ajusta el tamaño según tus necesidades */
-    border-radius: 50%; /* Para que el avatar tenga forma redonda */
-    margin-right: 10px; /* Espacio entre el avatar y el campo */
-  }
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.customButton {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  /* padding: 10px 20%; */
+  border-radius: 5px;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.customButton:hover {
+  background-color: #c82333;
+}
 
 .deleteUserButton {
-    background-color: #ff0000;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 16px;
-    text-decoration: none;
+  background-color: #ff0000;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  text-decoration: none;
 }
 
 .deleteUserButton:hover {
-    background-color: #cc0000;
+  background-color: #cc0000;
 }
 
 .changePasswordButton {
-  background-color: #00ccff;
+  background-color: #ffc107;
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -80,5 +232,186 @@
 }
 
 .changePasswordButton:hover {
-  background-color: #0099cc;
+  background-color: #e0a800;
+}
+
+.inputContainer {
+  display: flex;
+  align-items: center;
+}
+
+.inputContainer input {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 3px;
+  width: 100%;
+}
+
+.popup {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  color: #fff;
+  text-align: center;
+  margin-top: 2%;
+}
+
+.popup-content {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.popup-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #fff;
+  cursor: pointer;
+}
+.formGroupProfile {
+  margin-bottom: 20px;
+  display: flex;
+  /* align-items: flex-start;
+  justify-content: space-between;
+  width: 100%; */
+  flex-direction: column;
+}
+.formGroupProfile input[type="text"],
+.formGroupProfile input[type="email"],
+.formGroupProfile input[type="url"],
+.formGroupProfile textarea {
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+    padding: 5px 10px;
+    border-radius: 5px;    
+    font-family: 'Arial', sans-serif;
+    max-width: fit-content;
+}
+.formGroupProfileDescription .inputContainerDescription textarea {
+  width: 50%;
+  height: 150px;
+  background-color: black;
+  color: white;
+  border: 2px solid white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-family: 'Arial', sans-serif;
+  text-align: left;
+  resize: vertical;
+}
+
+.formGroupProfileBirthdate {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5px;
+}
+
+.formGroupProfileBirthdate input {
+  margin-top: 5px;
+  max-width: fit-content;
+}
+.customDateInput {
+  background-color: white;
+  color: rgb(0, 0, 0);
+  border: 2px solid black;
+  padding: 5px 10px;
+  border-radius: 5px;  
+  font-family: 'Arial', sans-serif; /* Reemplaza 'Arial' con la fuente que desees */
+  filter: invert() 
+}
+.formGroupRegister input[type="text"],
+.formGroupRegister input[type="email"],
+.formGroupRegister input[type="password"] {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 2px solid white;    
+}
+.containerFormRegister {
+  max-width: 500px;
+  padding: 30px;
+  background-color: #333;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  color: #fff;  
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.formGroupRegister {
+  margin-bottom: 20px;
+  display: flex;
+  /* align-items: flex-start;
+  justify-content: space-between;
+  width: 100%; */
+  flex-direction: column;
+}
+
+.formLabelRegister {
+  /* display: inline; */
+  margin-bottom: 5px;
+  color: #fff;
+  font-weight: lighter;
+  /* flex-basis: 30%;
+  margin-right: -10%; */
+}
+
+.formInputRegister {
+  width: 70%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 3px;  
+  color: rgb(0, 0, 0);
+  flex-basis: 70%;
+  text-align: right
+}
+
+.formButtonRegister {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.customTextarea {
+  background-color: #fff;
+  color: #000;
+  border: 2px solid black;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-family: 'Arial', sans-serif;
+  height: 150px;  
+  resize: vertical, horizontal;
+}
+
+.buttonsContainer {
+  height: 100%;
+  text-align: center;
+  padding-top: 1%;
+
+}
+.formButtonRegister:hover {
+  background-color: #0056b3;
+}
+
+.customAccountText {
+  text-align: center;
+  margin-top: 5%;
 }

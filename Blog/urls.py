@@ -4,8 +4,7 @@ from django.urls import path, include
 from Blog.views import *
 
 urlpatterns = [
-    path('', inicio, name = 'inicio'),    
-    path('inicio/', inicio2, name = 'inicio2'),    
+    path('', post_list, name = 'inicio'),    
     path('about/', about, name = 'about' ),
     path('pages/', pages, name = 'pages' ),
 
@@ -17,6 +16,8 @@ urlpatterns = [
     
     
     path('Users/', include('Users.urls')),
+
+    path('summernote/', include('django_summernote.urls')),
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

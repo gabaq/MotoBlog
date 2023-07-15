@@ -20,7 +20,7 @@
       <div class="small text-muted">Creado el {{ post.fecha }} por {{ post.autor }}</div>
       <main class="d-flex flex-column align-items-center">
 
-        <p class="card-text">{{ post.cuerpo }}</p>
+        <p class="card-text">{{ post.cuerpo|safe }}</p>
 
           <div class="">
             <a href="{% url 'post_update' post.pk %}" class="btn btn-primary">Editar</a>
