@@ -43,6 +43,12 @@ MotoBlog es un sitio web dedicado a las motocicletas. Aquí encontrarás reseña
 
 ¡Eso es todo! Ahora puedes acceder al sitio web desde tu navegador ingresando la URL proporcionada por el servidor de desarrollo.
 
+### Cuenta de administracion.
+
+La cuenta de administrador de la consola de django es:
+username: admin
+password: admin
+
 
 ## Autor
 
