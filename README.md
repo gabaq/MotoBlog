@@ -8,25 +8,25 @@ MotoBlog es un sitio web dedicado a las motocicletas. Aquí encontrarás reseña
 - Visualización de Publicaciones: Puedes navegar por la lista de publicaciones existentes y leer su contenido completo.
 - Creación de Publicaciones: Si estás registrado y autenticado, puedes crear nuevas publicaciones para compartir tus reseñas.
 - Edición y Eliminación de Publicaciones: También puedes editar y eliminar las publicaciones que has creado previamente.
--URLs:
-    'posts/'
-    'postcreate/'
-    'posts/ID/'
-    'posts/ID/update/'
-    'posts/ID/delete/'
+- URLs:
+    'posts/', 
+    'postcreate/', 
+    'posts/ID/', 
+    'posts/ID/update/', 
+    'posts/ID/delete/' 
 
 ### Users
 - Visualización de Publicaciones: Puedes navegar por la lista de publicaciones existentes y leer su contenido completo.
 - Creación de Publicaciones: Si estás registrado y autenticado, puedes crear nuevas publicaciones para compartir tus reseñas.
 - Edición y Eliminación de Publicaciones: También puedes editar y eliminar las publicaciones que has creado previamente.
--URLs:
-    'login/'
-    'logout/'
-    'register/'
-    'profile/'
-    'profile/changePassword'
-    'profile/deleteUser'
-    'profile/deleteAvatar'
+- URLs:
+    'login/', 
+    'logout/', 
+    'register/', 
+    'profile/', 
+    'profile/changePassword', 
+    'profile/deleteUser', 
+    'profile/deleteAvatar' 
 
 ## Tecnologías Utilizadas
 
