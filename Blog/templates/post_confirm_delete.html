@@ -6,9 +6,11 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container">
+
+    <div class="container d-flex justify-content-center align-items-center"></div>
+        </br>
         <h1 class="text-center">Confirmar Eliminación de Post</h1>
-        <p class="text-center">¿Estás seguro de que deseas eliminar este post?</p>
+        <p class="text-center">¿Estás seguro de que deseas eliminar el post {{ post.titulo }}?</p>
         <form method="post">
             {% csrf_token %}
             <div class="text-center">
