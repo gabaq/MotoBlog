@@ -32,10 +32,23 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'post_list' %}">Pages</a></li>                        
+                        <li class="nav-item"><a class="nav-link" href="{% url 'post_list' %}">Pages</a></li>                           
                         {% if user.is_authenticated %}
-                        <li class="nav-item"><a class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" aria-current="page" href="{% url 'myProfile' %}">Editar Perfil</a></li>
-                        <li class="nav-item"><a class="d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm" href="{% url 'myLogout' %}">Logout</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                {% if user.profile.avatar %}
+                                    <img src="{{ user.profile.avatar.url }}" alt="Avatar" class="profile-image small-avatar">
+                                {% else %}
+                                    <img src="{% static 'Users/img/default.png' %}" alt="Default Avatar" class="profile-image small-avatar">
+                                {% endif %}
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="userDropdown">
+                                <li><a class="dropdown-item" href="{% url 'myProfile' %}">Editar Perfil</a></li>
+                                <li><a class="dropdown-item" href="{% url 'myLogout' %}">Logout</a></li>
+                                <li><a class="dropdown-item" href="{% url 'changePassword' %}">Cambiar contraseña</a></li>
+                                <li><a class="dropdown-item" href="{% url 'deleteUser' %}">Eliminar cuenta</a></li>
+                            </ul>
+                        </li>
                         {% else %}
                         <li class="nav-item"><a class="btn btn-success" href="{% url 'myLogin' %}">Login</a></li>
                         {% endif %}
